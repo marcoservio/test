@@ -1,7 +1,7 @@
 from seleniumbase import Driver
 from seleniumbase.config import settings
 from selenium.webdriver.chrome.options import Options
-import undetected_chromedriver.v2 as uc
+import undetected_chromedriver as uc
 
 options = uc.ChromeOptions()
 options.add_argument("--window-size=1920,1080")
