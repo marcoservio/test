@@ -12,6 +12,8 @@ from selenium.common.exceptions import StaleElementReferenceException
 from selenium.webdriver.common.action_chains import ActionChains
 from selenium.common.exceptions import ElementClickInterceptedException
 
+import time
+
 DIR = "/home/paulofernando1992/chromedata"
 driver = Driver(uc=True, headless=False, user_data_dir=DIR, undetectable=True)
 driver.get("chrome://settings/")
@@ -40,6 +42,8 @@ password = "861590"
 elem_username.send_keys(username)
 elem_password.send_keys(password)
 elem_login_button.click()
+
+time.sleep(3)
 
 driver.save_screenshot("login.png")
 driver.close()
