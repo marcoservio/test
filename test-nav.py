@@ -1,7 +1,8 @@
-from seleniumbase import Driver
-from seleniumbase.config import settings
+from seleniumbase import BaseCase
 from selenium.webdriver.chrome.options import Options
+from selenium.webdriver.common.keys import Keys
 
+# Caminho do diretório para user_data_dir
 DIR = "/home/paulofernando1992/chromedata"
 
 # Opções do navegador
@@ -24,23 +25,14 @@ options.add_argument("--no-service-autorun")
 options.add_argument("--password-store=basic")
 options.add_argument(f"--user-data-dir={DIR}")
 
-# Configurações específicas do seleniumbase
-self.settings.USER_DATA_DIR = DIR
-
-# Configurar as opções do Chrome
-self.set_chrome_options(options)
-
-# Inicializar o driver
-self.create_driver()
-
-# Acesse o objeto driver diretamente, se necessário
-driver = self.driver
+# Criar instância do driver
+driver = BaseCase().create_driver(chrome_options=options)
 
 # Navegar para a URL desejada
-self.open("chrome://version/")
+driver.get("chrome://version/")
 
 # Capturar uma screenshot
-self.save_screenshot("valeuveiogarcon2.png")
+driver.save_screenshot("valeuveiogarcon2.png")
 
 # Fechar o driver
-driver.close()
+driver.quit()
