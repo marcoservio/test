@@ -1,12 +1,9 @@
-from seleniumbase import BaseCase
+from seleniumbase import Driver
+from seleniumbase.config import settings
 from selenium.webdriver.chrome.options import Options
-from selenium.webdriver.common.keys import Keys
+import undetected_chromedriver as uc
 
-# Caminho do diretório para user_data_dir
-DIR = "/home/paulofernando1992/chromedata"
-
-# Opções do navegador
-options = Options()
+options = uc.ChromeOptions()
 options.add_argument("--window-size=1920,1080")
 options.add_argument("--start-maximized")
 options.add_argument("--disable-extensions")
@@ -23,16 +20,12 @@ options.add_argument("--disable-setuid-sandbox")
 options.add_argument("--no-first-run")
 options.add_argument("--no-service-autorun")
 options.add_argument("--password-store=basic")
-options.add_argument(f"--user-data-dir={DIR}")
 
-# Criar instância do driver
-driver = BaseCase().create_driver(chrome_options=options)
+DIR = "/home/paulofernando1992/chromedata"
 
-# Navegar para a URL desejada
+settings.USER_DATA_DIR = DIR
+
+driver = uc.Chrome(use_subprocess=True, options=options)
 driver.get("chrome://version/")
-
-# Capturar uma screenshot
 driver.save_screenshot("valeuveiogarcon2.png")
-
-# Fechar o driver
-driver.quit()
+driver.close()
