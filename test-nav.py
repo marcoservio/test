@@ -1,3 +1,7 @@
+from seleniumbase import Driver
+from seleniumbase.config import settings
+from selenium.webdriver.chrome.options import Options
+
 DIR = "/home/paulofernando1992/chromedata"
 
 # Opções do navegador
