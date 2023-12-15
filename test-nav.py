@@ -1,7 +1,7 @@
 from seleniumbase import Driver
 from seleniumbase.config import settings
 from selenium.webdriver.chrome.options import Options
-import undetected_chromedriver as uc
+import undetected_chromedriver.v2 as uc
 
 options = uc.ChromeOptions()
 options.add_argument("--window-size=1920,1080")
@@ -23,9 +23,16 @@ options.add_argument("--password-store=basic")
 
 DIR = "/home/paulofernando1992/chromedata"
 
-settings.USER_DATA_DIR = DIR
+options.add_argument(f"--user-data-dir={DIR}")
 
-driver = uc.Chrome(use_subprocess=True, options=options)
+# Inicializar o driver
+driver = uc.Chrome(options=options)
+
+# Navegar para a URL desejada
 driver.get("chrome://version/")
+
+# Capturar uma screenshot
 driver.save_screenshot("valeuveiogarcon2.png")
-driver.close()
+
+# Fechar o driver
+driver.quit()
