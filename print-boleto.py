@@ -27,21 +27,3 @@ janela_principal = driver.current_window_handle
 botao.click()
 
 time.sleep(5)
-
-janelas = driver.window_handles
-
-nova_janela = None
-for janela in janelas:
-    if janela != janela_principal:
-        nova_janela = janela
-        break
-
-driver.switch_to.window(nova_janela)
-
-url_nova_guia = driver.current_url
-driver.get("chrome://settings/")
-driver.execute_script("chrome.settingsPrivate.setDefaultZoom(0.85);")
-driver.get(url_nova_guia)
-driver.save_screenshot("valeuveiogarcon.png")
-driver.switch_to.window(janela_principal)
-driver.save_screenshot("teste.png")
