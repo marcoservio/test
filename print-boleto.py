@@ -4,6 +4,7 @@ from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 
 import time
+import os
 
 DIR = "C:\\Users\Marco Sérvio\\AppData\\Local\\Google\\Chrome\\User Data"
 driver = Driver(uc=True, headless=False, user_data_dir=DIR, undetectable=True)
@@ -16,7 +17,9 @@ driver.save_screenshot("valeuveiogarcon2.png")
 driver.get("chrome://settings/")
 driver.execute_script("chrome.settingsPrivate.setDefaultZoom(0.25);")
 
-driver.get("file:///C:/projects/automation-consorcio/site.html")
+caminho_absoluto = os.path.abspath("site.html")
+
+driver.get("file:///" + caminho_absoluto)
 botao = driver.find_element(By.ID, "botao-down")
 
 janela_principal = driver.current_window_handle
