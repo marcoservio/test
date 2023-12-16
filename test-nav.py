@@ -39,8 +39,8 @@ elem_username = find_element_load(driver, By.ID, ELEM_USERNAME_ID)
 elem_password = find_element_load(driver, By.ID, ELEM_PASSWORD_ID)
 elem_login_button = find_element_load(driver, By.XPATH, ELEM_LOGIN_BUTTON_XPATH)
 
-username = "C2BCONS.OP02"
-password = "861590"
+username = "FRIBEI.OP01"
+password = "252829"
 
 elem_username.send_keys(username)
 elem_password.send_keys(password)
