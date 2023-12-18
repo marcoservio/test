@@ -17,10 +17,14 @@ def login_google():
 
     time.sleep(5)
 
+    driver.save_screenshot("1.png")
+
     email_field = driver.find_element(By.ID, "identifierId")
     email_field.send_keys("jiskoloviske@gmail.com")
 
     time.sleep(3)
+
+    driver.save_screenshot("2.png")
 
     botao_avancar = driver.find_element(
         By.CSS_SELECTOR,
@@ -30,6 +34,8 @@ def login_google():
 
     time.sleep(5)
 
+    driver.save_screenshot("3.png")
+    
     password_field = driver.find_element(
         By.CSS_SELECTOR, "input[class='whsOnd zHQkBf']"
     )
@@ -37,6 +43,8 @@ def login_google():
 
     time.sleep(3)
 
+    driver.save_screenshot("4.png")
+    
     botao_avancar2 = driver.find_element(
         By.CSS_SELECTOR,
         "button[class='VfPpkd-LgbsSe VfPpkd-LgbsSe-OWXEXe-k8QpJ VfPpkd-LgbsSe-OWXEXe-dgl2Hf nCP5yc AjY5Oe DuMIQc LQeN7 qIypjc TrZEUc lw1w4b']",
