@@ -26,7 +26,7 @@ def login_google():
         By.TAG_NAME,
         "button",
     )
-    botao_avancar[2].click()
+    botao_avancar[1].click()
 
     # botao_avancar = driver.find_element(
     #     By.CSS_SELECTOR,
@@ -53,7 +53,7 @@ def login_google():
         By.TAG_NAME,
         "button",
     )
-    botao_avancar2[1].click()
+    botao_avancar2[0].click()
 
     time.sleep(5)
 
