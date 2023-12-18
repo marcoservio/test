@@ -15,7 +15,7 @@ driver.execute_script("chrome.settingsPrivate.setDefaultZoom(1);")
 def login_google():
     driver.get("https://accounts.google.com/")
 
-    time.sleep(3)
+    time.sleep(5)
 
     email_field = driver.find_element(By.ID, "identifierId")
     email_field.send_keys("jiskoloviske@gmail.com")
