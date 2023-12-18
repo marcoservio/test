@@ -45,6 +45,8 @@ def login_google():
 
     time.sleep(3)
 
+    driver.save_screenshot("login_google.png")
+
 
 def fechar_cliente():
     driver.close()
@@ -105,4 +107,5 @@ except:
 
 login()
 
-driver.save_screenshot("login-google.png")
+time.sleep(1)
+driver.save_screenshot("final.png")
