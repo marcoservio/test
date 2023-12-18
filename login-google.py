@@ -22,7 +22,7 @@ def login_google():
     email_field = driver.find_element(By.ID, "identifierId")
     email_field.send_keys("jiskoloviske@gmail.com")
 
-    time.sleep(3)
+    time.sleep(5)
 
     driver.save_screenshot("2.png")
 
@@ -41,7 +41,7 @@ def login_google():
     )
     password_field.send_keys("Marco@007")
 
-    time.sleep(3)
+    time.sleep(5)
 
     driver.save_screenshot("4.png")
     
@@ -51,7 +51,7 @@ def login_google():
     )
     botao_avancar2.click()
 
-    time.sleep(3)
+    time.sleep(5)
 
     driver.save_screenshot("login_google.png")
 
