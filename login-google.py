@@ -22,11 +22,11 @@ def login_google():
 
     time.sleep(5)
 
-    botao_avancar = driver.find_elements(
+    botao_avancar = driver.find_element(
         By.TAG_NAME,
         "button",
     )
-    botao_avancar[1].click()
+    botao_avancar.click()
 
     # botao_avancar = driver.find_element(
     #     By.CSS_SELECTOR,
