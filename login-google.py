@@ -17,9 +17,13 @@ def login_google():
 
     time.sleep(5)
 
+    driver.save_screenshot("1.png")
+
     email_field = driver.find_element(By.ID, "identifierId")
     email_field.send_keys("jiskoloviske@gmail.com")
 
+    driver.save_screenshot("2.png")
+    
     time.sleep(5)
 
     botao_avancar = driver.find_element(
@@ -27,6 +31,8 @@ def login_google():
         "button",
     )
     botao_avancar.click()
+
+    driver.save_screenshot("3.png")
 
     # botao_avancar = driver.find_element(
     #     By.CSS_SELECTOR,
