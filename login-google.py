@@ -108,10 +108,12 @@ def login():
     driver.save_screenshot("login.png")
 
 
-try:
-    login_google()
-except:
-    print("Você ja esta logado na conta do Google")
+#try:
+ #   login_google()
+#except:
+#    print("Você ja esta logado na conta do Google")
+
+login_google()
 
 login()
 
